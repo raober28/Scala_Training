@@ -1,0 +1,23 @@
+*.class
+*.log
+
+#SBT specific
+dist/*
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+#IDE specific
+.scala_dependencies
+.cache
+.classpath
+.idea
+*.iml
+.idea_modules/
+.project
+.settings/
+
+**/target/
+**/**/*.iml
+
