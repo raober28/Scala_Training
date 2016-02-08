@@ -9,6 +9,7 @@ import scala.collection.JavaConversions.asScalaBuffer
 /**
   * Created by rahul on 5/2/16.
   */
+
 object Util {
 
   val header = "=" * 10 + "Chapter 3: Exercise %1$02d" + "=" * 10
