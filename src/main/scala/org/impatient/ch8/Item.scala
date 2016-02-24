@@ -19,7 +19,7 @@ class Bundle(val description: String) extends Item {
     item :: items
   }
 
-  override def price(): Double = {
+  override def price(): Int = {
     items.map(_.price()).sum
   }
 }
