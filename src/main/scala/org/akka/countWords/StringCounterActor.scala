@@ -14,7 +14,8 @@ class StringCounterActor extends Actor {
   def receive = {
 
     case ProcessStringMsg(string) => {
-      val wordsInLine = string.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)", -1).length
+      val wordsInLine = string.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)").length
+
       sender ! StringProcessedMsg(wordsInLine)
     }
 

@@ -2,6 +2,9 @@ package org.akka.countWords
 
 import akka.actor.{Props, ActorRef, Actor}
 import scala.io.Source._
+import akka.actor.OneForOneStrategy
+import akka.actor.SupervisorStrategy._
+import scala.concurrent.duration._
 
 /**
   * Created by rahul on 30/3/16.
@@ -42,5 +45,14 @@ class WordCounterActor(fileName: String) extends Actor {
 
     case  _ => println("message not recognized")
   }
+
+
+  override val supervisorStrategy =
+    OneForOneStrategy() {
+      case _: ArithmeticException => Resume
+      case _: NullPointerException => Restart
+      case _: IllegalArgumentException => Stop
+      case _: Exception => Escalate
+    }
 
 }
