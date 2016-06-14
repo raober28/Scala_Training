@@ -25,6 +25,7 @@ object Stars1 extends App {
     var nextNameIndex = 0
     val nameIndexLimit = names.length * (names.length + 1)
 
+    //timeout after when it stop receiving messages
     context.setReceiveTimeout(starBaseSpawntime + starVariableSpawntime)
 
     def receive = {
@@ -57,7 +58,6 @@ object Stars1 extends App {
   }
   class Star(greeting: String, gennum: Int, parent: String) extends Actor {
     import context.dispatcher
-
     var myName: String = ""
     var starsKnown = Map[String, ActorRef]()
     val random = Random
@@ -68,9 +68,9 @@ object Stars1 extends App {
       base + variable * random.nextInt(1000) / 1000
 
     val killtime = scaledDuration(starBaseLifetime, starVariableLifetime)
-    scheduler.scheduleOnce(killtime, self, SayGoodbye)
+    scheduler.scheduleOnce(killtime, self, SayGoodbye)        //one time scheduler
     val spawntime = scaledDuration(starBaseSpawntime, starVariableSpawntime)
-    val spawner = scheduler.schedule(spawntime, 1 second, self, Spawn)
+    val spawner = scheduler.schedule(spawntime, 1 second, self, Spawn)      //scheduled after every 1 second, spawn time after initialisation
     if (gennum > 1) scheduler.scheduleOnce(1 second, context.parent, IntroduceMe)
 
     def receive = {
