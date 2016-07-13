@@ -1,3 +1,4 @@
+/*
 
 package org.spray
 
@@ -45,3 +46,4 @@ object SongProtocol extends DefaultJsonProtocol {
 }
 
 
+*/
