@@ -1,49 +1,13 @@
-def printMultipleTable(): Unit = {
-  var i = 1
+import scala.concurrent.Future
+import scala.util.{Failure, Success}
 
-  while(i  <= 10)
-    {
-      var j = 1
-
-      while(j <= 10)
-        {
-          val prod = (i * j).toString
-          var k = prod.length
-
-          while(k < 4)
-            {
-              print(" ")
-              k += 1
-            }
-          print(prod)
-          j += 1
-        }
-
-      println("\n")
-      i += 1
-    }
+val f = Future {
+  "hello there"
 }
 
-printMultipleTable()
-
-
-def makeRowSeq(row: Int) =
-  for(col <- 1 to 10) yield {
-    val prod = (row * col).toString
-    val padding = " " * (4 - prod.length)
-    padding + prod
-
-  }
-
-def makeRow(row: Int) = makeRowSeq(row).mkString
-
-def multiTable() = {
-  val tableSeq = for(row <- 1 to 10)
-                    yield makeRow(row)
-
-  tableSeq.mkString("\n")
+f onComplete{
+  case Success(msg) => println(msg)
+  case Failure(e) => e.printStackTrace()
 }
-
-multiTable()
 
 

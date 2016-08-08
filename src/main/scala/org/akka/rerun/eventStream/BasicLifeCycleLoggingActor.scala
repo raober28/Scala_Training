@@ -23,9 +23,7 @@ object LifeCycleApp extends App {
   val deadLetterListener  = actorSystem.actorOf(Props[MyCustomDeadLetterListener], "mycustomdeadlistener")
   actorSystem.eventStream.subscribe(deadLetterListener, classOf[DeadLetter])
 
-  override val supervisorStrategy = AllForOneStrategy() {
-    case _ => Stop
-  }
+
 
 
   lifecycleActor  ! "hello"
