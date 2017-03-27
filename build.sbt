@@ -18,7 +18,7 @@ libraryDependencies ++= {
     "com.typesafe.akka" %% "akka-slf4j" % akkaV,
     "com.typesafe.akka" %% "akka-testkit" % akkaV % "test",
     "org.specs2" %% "specs2-core" % "2.3.11" % "test",
-    "org.mongodb" %% "casbah" % "2.7.1",
+    "org.mongodb" %% "casbah" % "3.0.0",
     "org.scalatest" %% "scalatest" % "2.2.6" % "test",
     "ch.qos.logback" % "logback-classic" % "1.1.2" % "runtime",
     "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4",

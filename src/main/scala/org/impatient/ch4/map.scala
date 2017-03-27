@@ -12,7 +12,7 @@ import scala.collection.JavaConversions.{mapAsScalaMap, propertiesAsScalaMap}
 object map {
 
   val header = "=" * 10 + "Chapter 4: Exercise %1$02d" + "=" * 10
-
+Int
   def main(args: Array[String]) {
     println(leeqgt(Array(45, 78, 21, 63, 24, 56, 58, 24, 23, 18, 17, 65, 4, 595), 36))
   }
@@ -130,6 +130,18 @@ object map {
 
     (lt.length, et.length, gt.length)
 
+  }
+
+  def sum(a: Int, b: Int) = {
+
+
+  }
+
+  def sum(value: List[Int]): Int = {
+    value match {
+      case h :: t => h + sum(t)
+      case _ => 0
+    }
   }
 
 

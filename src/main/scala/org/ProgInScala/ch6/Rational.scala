@@ -6,68 +6,52 @@ package org.ProgInScala.ch6
 class Rational(n: Int, d: Int) {
   require(d != 0)
 
-  private val g = gcd(n, d)
+  private val g = gcd(n.abs, d.abs)
   val numer: Int = n / g
   val denom: Int = d / g
 
+  def this(n: Int) = this(n, 1)
 
+  override def toString = numer + "/" + denom
 
-  override def toString = numer  + "/" + denom
+  implicit def intToRational(x: Int) : Rational = new Rational(x)
 
-  def +(that: Rational) : Rational = {
+  def + (that: Rational): Rational = {
     new Rational(
       numer * that.denom + that.numer * denom,
       denom * that.denom
     )
   }
 
-  def +(i : Int): Rational = {
+  def + (i : Int) : Rational =
     new Rational(numer + i * denom, denom)
-  }
 
   def - (that: Rational): Rational =
     new Rational(
       numer * that.denom - that.numer * denom,
-      denom * that.denom
+      denom * that.numer
     )
 
-  def - (i: Int): Rational =
+  def - (i: Int) : Rational =
     new Rational(numer - i * denom, denom)
 
-  def * (that: Rational): Rational =
-    new Rational(numer * that.numer, denom * that.denom)
 
-  def * (i: Int): Rational =
+  def * (that: Rational) : Rational =
+    new Rational(numer * that.numer , denom * that.denom)
+
+  def * (i : Int) : Rational =
     new Rational(numer * i, denom)
 
   def / (that: Rational): Rational =
     new Rational(numer * that.denom, denom * that.numer)
 
-  def / (i: Int): Rational =
+  def / (i: Int) : Rational =
     new Rational(numer, denom * i)
 
-  def lessThan(that: Rational) = {
-    this.numer * that.numer < that.numer * this.numer
-  }
-
-  def max(that: Rational) = {
-    if(this lessThan that) that else this
-  }
-
-  def this(n : Int) = this(n, 1)
+  def lessThan(that: Rational) =
+    this.numer * that.denom < that.numer * this.denom
 
   private def gcd(a: Int, b: Int): Int =
-    if(b == 0) a else gcd(b, a % b)
+    if (b == 0) a else gcd(b, a % b)
 
 }
-
-
-
-class Person(a: Int) {
-   val age: Int = a
-   def +(that: Person): Person = new Person(this.age + that.age)
-   def *(that: Person): Person = new Person(this.age * that.age)
-
-  override def toString = "Person.age : " + this.age
-   }
-
