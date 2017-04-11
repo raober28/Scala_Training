@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<incident>
+    <alarmcentrale>Eurocross</alarmcentrale>
+    <telefoonac>071456432</telefoonac>
+    <dossiernummerac>EC75675</dossiernummerac>
+    <tijdstipmeldingac>2015-12-04T12:00:01</tijdstipmeldingac>
+    <incidenttype>Pech</incidenttype>
+    <opmerkingenac>Lekke band</opmerkingenac>
+    <incidentlocatie>
+        <wegnummer>12</wegnummer>
+        <hectometer>12.1</hectometer>
+        <hectometerletter>x</hectometerletter>
+        <rijbaan>R</rijbaan>
+        <straat/>
+        <huisnummer/>
+        <huisnummertoevoeging/>
+        <plaats/>
+        <provincie/>
+        <land/>
+        <lat/>
+        <lon/>
+    </incidentlocatie>
+    <voertuig>
+        <kenteken>WW-45-DB</kenteken>
+    </voertuig>
+    <polisgegevens>
+        <berijder>Jansen</berijder>
+        <telefoonberijder>0645345235</telefoonberijder>
+        <verzekeraar/>
+        <polisdekking/>
+    </polisgegevens>
+    <lcm>
+        <telefoonlcm/>
+        <lcmdossier/>
+        <lcmberger/>
+        <tijdstipopdrachtlcm/>
+        <opmerkingenlcm/>
+        <lcmberger/>
+        <telefoonlcmberger/>
+    </lcm>
+</incident>
