@@ -22,7 +22,9 @@ libraryDependencies ++= {
     "org.scalatest" %% "scalatest" % "2.2.6" % "test",
     "ch.qos.logback" % "logback-classic" % "1.1.2" % "runtime",
     "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4",
-    "joda-time" % "joda-time" % "2.9.4"
+    "joda-time" % "joda-time" % "2.9.4",
+    "com.typesafe.play" %% "play-json" % "2.6.0-M1"
+
 
   )
 }
