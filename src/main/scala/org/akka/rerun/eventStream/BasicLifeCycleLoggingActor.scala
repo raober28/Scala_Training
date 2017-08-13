@@ -31,7 +31,7 @@ object LifeCycleApp extends App {
   lifecycleActor  ! "hello"
 
   Thread.sleep(2000)
-  actorSystem.shutdown()
+  actorSystem.terminate()
 }
 
 

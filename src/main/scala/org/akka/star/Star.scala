@@ -42,7 +42,7 @@ object Stars1 extends App {
       }
       case ReceiveTimeout => {
         println("Namer receive timeout, shutting down system")
-        system shutdown
+        system terminate
       }
     }
   }

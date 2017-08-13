@@ -34,7 +34,7 @@ class TeacherLogParameterActorTest extends TestKit(ActorSystem("UniversityMessag
 
   override def afterAll(): Unit = {
     super.afterAll()
-    system.shutdown()
+    system.terminate()
   }
 
 }

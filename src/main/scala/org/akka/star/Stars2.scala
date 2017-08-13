@@ -289,5 +289,5 @@ object Stars2 extends App {
   system.actorOf(Director.props("Astro"), "Astro")
   system.actorOf(Director.props("Cosmo"), "Cosmo")
   Thread sleep 15000
-  system.shutdown
+  system.terminate
 }

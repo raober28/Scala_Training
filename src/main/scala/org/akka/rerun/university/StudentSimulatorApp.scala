@@ -21,7 +21,7 @@ object StudentSimulatorApp extends App {
   Thread.sleep(2000)
 
   //Shutdown the ActorSystem.
-  actorSystem.shutdown()
+  actorSystem.terminate()
 }
 
 object TeacherProtocol {

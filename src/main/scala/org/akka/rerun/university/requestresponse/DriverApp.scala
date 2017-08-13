@@ -25,7 +25,7 @@ object DriverApp extends App {
   Thread.sleep(2000)
 
   //Shut down the ActorSystem.
-  system.shutdown()
+  system.terminate()
 
 }
 
